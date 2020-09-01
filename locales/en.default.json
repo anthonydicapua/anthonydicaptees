@@ -1,0 +1,61 @@
+{
+  "general": {
+    "404": {
+      "title": "sorry, we can't find that page.",
+      "subtext_html": "back to anthony dicap tees"
+    },
+    "shop": {
+      "title": "anthony dicap tees",
+      "description": "limited edition tees designed and made by anthony dicapua",
+      "sub-description": "made in new york city"
+    },
+    "about": {
+      "title": "about us",
+      "description": "anthony dicapua is a dj living in bushwick, brooklyn and currently learning ux/ui design and coding at superhi. these t-shirts are inspired by construction and blue collar company t-shirts."
+    }
+},
+    "header": {
+      "nav": {
+        "shop": "shop"
+      }
+    },
+    "cart": {
+      "button": {
+        "count_html": "cart (<span class=\"js-cart-item-count\">{{ itemCount }}</span>)",
+        "close": "close"
+      },
+      "empty": {
+        "title": "your cart is empty",
+        "button": "keep shopping"
+      },
+      "filled": {
+        "title": "your cart",
+        "subtotal": "subtotal",
+        "checkout": "checkout"
+      }
+    },
+    "footer": {
+      "list": {
+        "products": "our products"
+      },
+      "bottom": {
+        "copyright": "©{{ date }} anthony dicapua"
+      },
+      "social": {
+        "twitter_handle":  "anthonydicap",
+        "instagram_handle": "anthonydicap",
+        "alt": "www.anthonydicapua.com"
+      }
+    },
+    "product": {
+      "card": {
+        "options": "{{ optionCount }} sizes",
+        "more_info": "more info"
+      },
+      "form": {
+        "quantity": "quantity",
+        "submit": "add to cart",
+        "sold_out": "sold out"
+      }
+    }
+}
