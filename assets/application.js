@@ -1,23 +1,23 @@
 // Put your applicaiton javascript here
 $(document).ready(function() {
 
-    $(document).on('click', '.js-quantity-button', function(event) {
+    let
+    onQuantityButtonClick = function(event) {
         // alert('button clicked')
         let
         $button = $(this),
         $form = $button.closest('form'),
         $quantity = $form.find('.js-quantity-field'),
         quantityValue = parseInt($quantity.val()),
-        max = $quantity.attr('max') ? parseInt($quantity.attr('max')) : null;
+        max = $quantity.attr('max') ? parseInt($quantity.attr('max')) : null
 
         if ($button.hasClass('plus') && (max === null || quantityValue+1 <= max)) {
             $quantity.val(quantityValue + 1).change()
         } else if ($button.hasClass('minus')) {
             $quantity.val(quantityValue - 1).change()
         }
-    })
-
-    $(document).on('change', '.js-quantity-field', function(event) {
+    },
+    onQuantityFieldChange = function(event) {
         let
         $field = $(this),
         $form = $field.closest('form'),
@@ -41,9 +41,8 @@ $(document).ready(function() {
         } else if ($minusButton.prop('disabled') === true) {
             $plusButton.prop('disabled', false)
         }
-    })
-
-    $(document).on('change', '.js-variant-radio', function(event) {
+    },
+    onVariantRadioChange = function(event) {
         let
         $radio = $(this),
         $form = $radio.closest('form'),
@@ -60,6 +59,12 @@ $(document).ready(function() {
         if (parseInt($quantity.val()) > max) {
             $quantity.val(max).change()
         }
-    })
+    }
+
+    $(document).on('click', '.js-quantity-button', onQuantityButtonClick)
+
+    $(document).on('change', '.js-quantity-field', onQuantityFieldChange)
+
+    $(document).on('change', '.js-variant-radio', onVariantRadioChange)
 
 })
