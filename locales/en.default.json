@@ -31,7 +31,7 @@
       "filled": {
         "title": "your cart",
         "subtotal": "subtotal",
-        "checkout": "checkout"
+        "button": "checkout"
       }
     },
     "footer": {
