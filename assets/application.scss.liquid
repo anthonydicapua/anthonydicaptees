@@ -13,9 +13,9 @@ $text-color-light-white: #AAAAAA;
 
 $gold: #BEA482;
 
-$background-color: #F2F2F2;
-$header-background-color: #955E4C;
-$footer-background-color: #955E4C;
+$background-color: #FEFEFE;
+$header-background-color: #5EA796;
+$footer-background-color: #5EA796;
 $border-color: rgba(0,0,0,0.15);
 $border-color-white: rgba(255,255,255,0.15);
 
@@ -109,7 +109,9 @@ ol {
 h1,
 .h1,
 h2,
-.h2 {
+.h2,
+h3,
+.h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: $type-bold;
     color: $black;
@@ -133,10 +135,16 @@ h4,
     @include spaced-caps;
 }
 
+h3,
+.h3 {
+    font-size: $type-body-med;
+    line-height: $line-global;
+}
+
 a {
     color: $black;
     &:hover {
-        opacity: 0.50;
+        opacity: 0.7;
     }
 }
 
@@ -158,6 +166,7 @@ p {
 button[type="submit"],
 .button {
     @include reset-input;
+    display: inline-block;
     width: 100%;
     padding: $line-global;
     text-align: center;
@@ -448,4 +457,68 @@ button[type="submit"],
 #add-to-cart-button {
     margin-top: $line-global;
     margin-bottom: $line-global;
+}
+
+// cart page styles
+
+.cart-page-contents {
+    background: $light-black;
+    padding: $offset-global;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+// shared cart styles
+
+.cart-lines {
+    margin-top: $line-global;
+    border-top: $standard-border-white;
+    border-bottom: $standard-border-white;
+    padding: $line-global 0;
+}
+
+.cart-empty-text {
+    margin: ($line-global*4) 0;
+}
+
+// line item styles
+
+.line-item {
+    @extend .text-white;
+    @include flex-space-between;
+
+    .line-image {
+        width: 80px;
+        position: relative;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .remove-line {
+        position: absolute;
+        width: $line-global;
+        height: $line-global;
+        top: -($line-global/2);
+        right: -($line-global/2);
+        display: none;
+    }
+
+    &:hover {
+        .remove-line {
+            display: block;
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: $line-global;
+    }
+}
+
+.subtotal-line {
+    @include flex-space-between;
+    padding: $line-global 0;
 }

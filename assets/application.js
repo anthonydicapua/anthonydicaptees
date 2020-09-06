@@ -59,12 +59,34 @@ $(document).ready(function() {
         if (parseInt($quantity.val()) > max) {
             $quantity.val(max).change()
         }
-    }
+    },
+    onAddToCart = function (event) {
+        event.preventDefault()
+
+        $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: onCartUpdated,
+            error: onError
+        })
+    },
+    onCartUpdated = function() {
+        alert('cart is updated')
+    },
+    onError = function(XMLHttpRequest, textStatus) {
+        let data = XMLHttpRequest.responseJSON
+        alert(data.status + ' - ' + data.message + ': ' + data.description)
+
+    };
 
     $(document).on('click', '.js-quantity-button', onQuantityButtonClick)
 
     $(document).on('change', '.js-quantity-field', onQuantityFieldChange)
 
     $(document).on('change', '.js-variant-radio', onVariantRadioChange)
+
+    $(document).on('submit', '#add-to-cart-form', onAddToCart)
 
 })
