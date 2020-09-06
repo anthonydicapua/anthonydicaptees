@@ -2,7 +2,7 @@
   "general": {
     "404": {
       "title": "sorry, we can't find that page.",
-      "subtext_html": "back to anthony dicap tees"
+      "back": "back to anthony dicap tees"
     },
     "shop": {
       "title": "anthony dicap tees",
