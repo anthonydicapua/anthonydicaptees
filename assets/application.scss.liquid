@@ -4,7 +4,7 @@ $text-font: 'Fira Sans', monospace;
 $black: #000000;
 $white: #FFFFFF;
 
-$light-black: #333333;
+$light-black: #0E1A17;
 
 $text-color: #000000;
 $text-color-white: #CCCCCC;
@@ -14,8 +14,8 @@ $text-color-light-white: #AAAAAA;
 $gold: #BEA482;
 
 $background-color: #FEFEFE;
-$header-background-color: #5EA796;
-$footer-background-color: #5EA796;
+$header-background-color: #8DA7A5;
+$footer-background-color: #8DA7A5;
 $border-color: rgba(0,0,0,0.15);
 $border-color-white: rgba(255,255,255,0.15);
 
@@ -172,16 +172,16 @@ button[type="submit"],
     text-align: center;
     font-size: $type-body-med;
     line-height: $line-global;
-    background: #C8E8E0;
+    background: #D7E44E;
     color: $black;
 
     &:disabled {
-        opacity: 0.75;
+        opacity: 0.85;
         cursor: not-allowed;
     }
 
     &:not(:disabled):hover {
-        background-color: darken(#C8E8E0, 10%);
+        background-color: darken(#D7E44E, 10%);
     }
 }
 
@@ -321,6 +321,7 @@ button[type="submit"],
     height: 50vh;
     min-height: 400px;
     padding-bottom: $offset-global;
+    background-color: $white;
 }
 
 .sub-description-hero {
@@ -330,7 +331,7 @@ button[type="submit"],
 // shared product styles
 .product-info-section {
     @extend .text-white;
-    background-color: $light-black;
+    background-color: #0E1A17;
     padding: $offset-global;
     display: flex;
     flex-direction: column;
@@ -580,6 +581,10 @@ html.mini-cart-open {
     }
 }
 
+.text-white .button {
+    color: $black;
+}
+
 // page.liquid styles
 #page {
     min-height: 80vh;
@@ -654,5 +659,14 @@ html.mini-cart-open {
 
     .two-columns {
         margin-bottom: $offset-global;
+    }
+
+    .index-top h1 {
+        font-size: 40px;
+        line-height: 1;
+    }
+
+    .card-info {
+        margin-top: 24px;
     }
   }
